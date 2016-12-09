@@ -1,36 +1,37 @@
-<p>CUBE HERE</p>
-<div class="cube" 
-  ng-style="cube.cubeSpin">
-  <!-- ng-controller="CalendarCtrl as calendar" -->
-  
-  <div class="cube-face  cube-face-front">
-   <calendar-form-drv 
-     send-data="calendar.addEvent(payload)">
-   </calendar-form-drv>
+<div class="scene">
+  <div class="cube" 
+    ng-style="cube.cubeSpin">
+    <!-- ng-controller="CalendarCtrl as calendar" -->
+    
+    <div class="cube-face  cube-face-front">front face
+     <!-- <calendar-form-drv 
+       send-data="calendar.addEvent(payload)">
+     </calendar-form-drv> -->
+    </div>
+    
+    <div class="cube-face  cube-face-back">back face</div>
+    <div class="cube-face  cube-face-left">left face
+     
+    <!-- <editabile 
+     edit-event="calendar.editEvent(payload, id)"
+     props="calendar.editItem"
+     id="calendar.editItem.id">
+    </editabile> -->
+     
+    </div>
+    <div class="cube-face  cube-face-right">right face
+     <!-- <ol ng-if="calendar.list.length">
+       <li ng-repeat="event in calendar.list">
+         <button ng-click="calendar.editItem = event">edit</button>||
+         <button ng-click="calendar.deleteEvent(event.id)">delete</button>
+         <span ng-bind="event.title"></span><br />
+         <span ng-bind="event.content"></span><br />
+         <span ng-bind="event.date"></span>
+       </li>
+     </ol> -->
+     <p ng-if="!calendar.list.length">..no item yet...</p>
+    </div>
+    <div class="cube-face  cube-face-top">top face</div>
+    <div class="cube-face  cube-face-bottom">bottom face</div>
   </div>
-  
-  <div class="cube-face  cube-face-back"></div>
-  <div class="cube-face  cube-face-left">
-   
-  <editabile 
-   edit-event="calendar.editEvent(payload, id)"
-   props="calendar.editItem"
-   id="calendar.editItem.id">
-  </editabile>
-   
-  </div>
-  <div class="cube-face  cube-face-right">
-   <ol ng-if="calendar.list.length">
-     <li ng-repeat="event in calendar.list">
-       <button ng-click="calendar.editItem = event">edit</button>||
-       <button ng-click="calendar.deleteEvent(event.id)">delete</button>
-       <span ng-bind="event.title"></span><br />
-       <span ng-bind="event.content"></span><br />
-       <span ng-bind="event.date"></span>
-     </li>
-   </ol>
-   <p ng-if="!calendar.list.length">..no item yet...</p>
-  </div>
-  <div class="cube-face  cube-face-top"></div>
-  <div class="cube-face  cube-face-bottom"></div>
 </div>
