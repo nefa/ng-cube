@@ -27,7 +27,7 @@
     <button 
       ng-if="evtFormCtrl.editable"
       ng-disabled="!evtFormCtrl.dataModel.title && !evtFormCtrl.dataModel.content && !evtFormCtrl.dataModel.date"
-      ng-click="evtFormCtrl.submit({payload: evtFormCtrl.dataModel, id: evtFormCtrl.dataModel.id}); evtFormCtrl.clearForm()">
+      ng-click="evtFormCtrl.submit({payload: evtFormCtrl.dataModel, id: evtFormCtrl.dataModel.id});">
           Update
       </button>  
     <!-- <datepicker>

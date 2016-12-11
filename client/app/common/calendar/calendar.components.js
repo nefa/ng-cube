@@ -33,8 +33,8 @@ export const editEvent = {
 
   	get props() {return this._cs.editItem}
   	
-  	editEventItem(payload) {
-  		this._cs.editEventItem(payload);
+  	editEventItem(payload, id) {
+  		this._cs.editEventItem(payload, id);
   	}
   },
   template: `<event-form 
@@ -56,7 +56,9 @@ export const calendarList = {
 		}
 
 		editItem(event) {
+			console.log(event)
 			this._cs.editItem = event;
+			console.log(this._cs.editItem)
 		}
 
 		get list() {return this._cs.list}
