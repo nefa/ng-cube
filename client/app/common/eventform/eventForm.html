@@ -1,0 +1,38 @@
+<form name="evtFormCtrl.form"  novalidate>
+    title:
+    <br />
+    <input type="text" name="title" 
+      ng-model="evtFormCtrl.dataModel.title" required="">
+    <br />
+      <div ng-show="evtFormCtrl.form.$submitted || evtFormCtrl.form.title.$touched">
+        <div style="color: red" 
+          ng-show="evtFormCtrl.form.title.$error.required">Event needs a title</div>
+      </div>
+    <br />
+    content:
+    <br />
+    <textarea type="text" name="content" 
+      ng-model="evtFormCtrl.dataModel.content" required="">
+    </textarea>
+    <br />
+    
+    <button
+      ng-if="!evtFormCtrl.editable"
+      ng-disabled="evtFormCtrl.form.$pristine || evtFormCtrl.form.title.$error.required"
+
+      ng-click="evtFormCtrl.submit({payload: evtFormCtrl.dataModel}); 
+        evtFormCtrl.checkStatus()">
+          Submit
+    </button>
+    <button 
+      ng-if="evtFormCtrl.editable"
+      ng-disabled="!evtFormCtrl.dataModel.title && !evtFormCtrl.dataModel.content && !evtFormCtrl.dataModel.date"
+      ng-click="evtFormCtrl.submit({payload: evtFormCtrl.dataModel, id: evtFormCtrl.dataModel.id}); evtFormCtrl.clearForm()">
+          Update
+      </button>  
+    <!-- <datepicker>
+      <input ng-model="evtFormCtrl.dataModel.date" type="text"/>
+    </datepicker> -->
+    <br />  
+</form>
+

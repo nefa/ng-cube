@@ -7,6 +7,11 @@ let cubeComponent = {
   restrict: 'E',
   bindings: {},
   template,
+  transclude: {
+  	front: '?cubeFrontFace',
+  	right: '?cubeRightFace',
+  	left: '?cubeLeftFace'
+  },
   controller,
   controllerAs: 'cube'
 };

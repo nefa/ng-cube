@@ -48,8 +48,7 @@ class CubeController extends Cube {
     this.$document.on('keydown', evt => this.$scope.$apply(apply => this.spinCube(evt.code)))
   }
 }
-//or
-//CubeCtrl.$inject = ['$document', '$scope'];
+
 export default CubeController;
 
 //===========End of Cube

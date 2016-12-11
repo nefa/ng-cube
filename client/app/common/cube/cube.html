@@ -3,15 +3,17 @@
     ng-style="cube.cubeSpin">
     <!-- ng-controller="CalendarCtrl as calendar" -->
     
-    <div class="cube-face  cube-face-front">front face
+    <div class="cube-face  cube-face-front"
+      ng-transclude="front">front face
      <!-- <calendar-form-drv 
        send-data="calendar.addEvent(payload)">
      </calendar-form-drv> -->
     </div>
     
     <div class="cube-face  cube-face-back">back face</div>
-    <div class="cube-face  cube-face-left">left face
-     
+    <div class="cube-face  cube-face-left"
+      ng-transclude="left">left face
+      
     <!-- <editabile 
      edit-event="calendar.editEvent(payload, id)"
      props="calendar.editItem"
@@ -19,7 +21,8 @@
     </editabile> -->
      
     </div>
-    <div class="cube-face  cube-face-right">right face
+    <div class="cube-face  cube-face-right"
+      ng-transclude="right">right face
      <!-- <ol ng-if="calendar.list.length">
        <li ng-repeat="event in calendar.list">
          <button ng-click="calendar.editItem = event">edit</button>||

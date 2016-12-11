@@ -1,14 +1,14 @@
 import angular from 'angular';
 import Navbar from './navbar/navbar';
-import Hero from './hero/hero';
-import User from './user/user';
 import Cube from './cube/cube';
+import Calendar from './calendar/calendar';
+import EventForm from './eventform/eventForm';
 
 let commonModule = angular.module('app.common', [
   Navbar,
-  Hero,
-  User,
-  Cube
+  Cube,
+  Calendar,
+  EventForm
 ])
   
 .name;
