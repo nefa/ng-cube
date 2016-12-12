@@ -23,9 +23,7 @@ let eventFormComponent = {
         changes.props && changes.props.currentValue || this.dataModel)
     }
     clearForm() {this.dataModel = {}}
-    checkStatus() {
-      console.log(this.form)
-    }
+    open() {}
     
   },
   controllerAs: 'evtFormCtrl',

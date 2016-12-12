@@ -1,7 +1,7 @@
 <form name="evtFormCtrl.form"  novalidate>
     title:
     <br />
-    <input type="text" name="title" 
+    <input type="text" name="title" class="formTitle"
       ng-model="evtFormCtrl.dataModel.title" required="">
     <br />
       <div ng-show="evtFormCtrl.form.$submitted || evtFormCtrl.form.title.$touched">
@@ -15,19 +15,74 @@
       ng-model="evtFormCtrl.dataModel.content" required="">
     </textarea>
     <br />
+
+    <!-- <h4>Popup Datepicker</h4> -->
+    <datepicker>
+      <input ng-model="$ctrl.dataModel.date" type="text"/>
+    </datepicker>
+    <!-- <div style="display:inline-block; min-height:290px;" 
+      ng-controller="DatepickerDemoCtrl">
+        <datepicker class="well well-sm"
+          ng-model="dt" 
+          min-date="minDate" 
+          show-weeks="true" >
+          
+        </datepicker>
+    </div> -->
     
+   <!--  <div class="row" ng-controller="DatepickerDemoCtrl">
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" 
+              datepicker-popup="{{format}}" 
+              ng-model="dt" is-open="opened" 
+              min-date="minDate" 
+              max-date="'2015-06-22'" 
+              datepicker-options="dateOptions" 
+              date-disabled="disabled(date, mode)" 
+              ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="row" >
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" close-text="Close"
+                datepicker-popup="{'dd-MMMM-yyyy'}" 
+                ng-model="evtFormCtrl.dataModel.date" 
+                is-open="true" 
+                 
+                datepicker-options="{formatYear: 'yy', startingDay: 1}" 
+                ng-required="true"  />
+
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="evtFormCtrl.open($event)">
+                  <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+            </p>
+        </div>
+    </div> -->
+    <br />
+
+
     <button
       ng-if="!evtFormCtrl.editable"
       ng-disabled="evtFormCtrl.form.$pristine || evtFormCtrl.form.title.$error.required"
 
-      ng-click="evtFormCtrl.submit({payload: evtFormCtrl.dataModel}); 
-        evtFormCtrl.checkStatus()">
+      ng-click="evtFormCtrl.submit({payload: evtFormCtrl.dataModel}); evtFormCtrl.clearForm()">
           Submit
     </button>
     <button 
       ng-if="evtFormCtrl.editable"
-      ng-disabled="!evtFormCtrl.dataModel.title && !evtFormCtrl.dataModel.content && !evtFormCtrl.dataModel.date"
-      ng-click="evtFormCtrl.submit({payload: evtFormCtrl.dataModel, id: evtFormCtrl.dataModel.id});">
+      ng-disabled="evtFormCtrl.form.$pristine || evtFormCtrl.form.title.$error.required"
+
+      ng-click="evtFormCtrl.submit({payload: evtFormCtrl.dataModel, id: evtFormCtrl.dataModel.id}); evtFormCtrl.clearForm()">
           Update
       </button>  
     <!-- <datepicker>
