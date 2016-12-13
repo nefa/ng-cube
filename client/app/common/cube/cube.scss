@@ -1,4 +1,4 @@
-$size: 400px; // cube length
+$size: 500px; // cube length
 body {
   text-align: center;
   padding: 100px;
@@ -9,7 +9,7 @@ body {
   width: $size;
   height: $size;
   
-  perspective: 500px;
+  perspective: 650px;
 }
 .cube {
   position: relative;

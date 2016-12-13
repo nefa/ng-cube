@@ -1,25 +1,45 @@
+
 <form name="evtFormCtrl.form"  novalidate>
-    title:
-    <br />
+  <div class="form-group">
+    <label for="title">Title:</label><br />
     <input type="text" name="title" class="formTitle"
       ng-model="evtFormCtrl.dataModel.title" required="">
+  </div>
+    
     <br />
-      <div ng-show="evtFormCtrl.form.$submitted || evtFormCtrl.form.title.$touched">
+    
+    <br />
+     <!--  <div ng-show="evtFormCtrl.form.title.$touched ">
         <div style="color: red" 
           ng-show="evtFormCtrl.form.title.$error.required">Event needs a title</div>
-      </div>
+      </div> -->
     <br />
     content:
     <br />
-    <textarea type="text" name="content" 
+    <textarea type="text" name="content" class="formTextarea"
       ng-model="evtFormCtrl.dataModel.content" required="">
     </textarea>
     <br />
+  <div ng-controller="DatepickerDemoCtrl">
+     
+      <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="form-control" 
+            uib-datepicker-popup ng-model="evtFormCtrl.dataModel.date" 
+            is-open="popup2.opened" 
+            datepicker-options="dateOptions" 
+            ng-required="true" close-text="Close" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open2()">open/close</button>
+          </span>
+        </p>
+      </div>
+  </div>
 
     <!-- <h4>Popup Datepicker</h4> -->
-    <datepicker>
+    <!-- <datepicker>
       <input ng-model="$ctrl.dataModel.date" type="text"/>
-    </datepicker>
+    </datepicker> -->
     <!-- <div style="display:inline-block; min-height:290px;" 
       ng-controller="DatepickerDemoCtrl">
         <datepicker class="well well-sm"
@@ -90,4 +110,4 @@
     </datepicker> -->
     <br />  
 </form>
-
+</div>

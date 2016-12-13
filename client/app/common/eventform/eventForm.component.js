@@ -11,18 +11,21 @@ let eventFormComponent = {
   controller: class EvtentFormController {
   
     constructor() {
-      this.dataModel = {};   
+      this.dataModel = {
+        date: new Date()
+      };   
     }
     
     $onInit() {
       this.dataModel = Object.assign({}, this.props || {});
-      console.log(this)
     }
     $onChanges(changes) {
       this.dataModel = Object.assign(this.dataModel, 
         changes.props && changes.props.currentValue || this.dataModel)
     }
-    clearForm() {this.dataModel = {}}
+    clearForm() {
+      this.dataModel = {}
+    }
     open() {}
     
   },
